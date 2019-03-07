@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bottomnavigationbar/pages_keep_alive/airplay_screen.dart';
 import 'package:flutter_bottomnavigationbar/pages_keep_alive/email_screen.dart';
 import 'package:flutter_bottomnavigationbar/pages_keep_alive/home_screen.dart';
+import 'package:flutter_bottomnavigationbar/pages_keep_alive/page_layout.dart';
 import 'package:flutter_bottomnavigationbar/pages_keep_alive/pages_screen.dart';
 
 class NavigationKeepAlive extends StatefulWidget {
@@ -9,13 +10,12 @@ class NavigationKeepAlive extends StatefulWidget {
   _NavigationKeepAliveState createState() => _NavigationKeepAliveState();
 }
 
-class _NavigationKeepAliveState extends State<NavigationKeepAlive>
-    with SingleTickerProviderStateMixin {
-
+class _NavigationKeepAliveState extends State<NavigationKeepAlive> with SingleTickerProviderStateMixin {
   final _bottomNavigationColor = Colors.blue;
   int _currentIndex = 0;
   var _controller = PageController(
     initialPage: 0,
+    keepPage: false,
   );
 
   @override
@@ -30,10 +30,13 @@ class _NavigationKeepAliveState extends State<NavigationKeepAlive>
       body: PageView(
         controller: _controller,
         children: <Widget>[
-          AirPlayScreen(),
+          NoKeepAlive(
+            currentIndex: _currentIndex,
+            children: HomeScreen(),
+          ),
           EmailScreen(),
-          HomeScreen(),
-          PagesScreen()
+          PagesScreen(),
+          AirPlayScreen(),
         ],
         physics: NeverScrollableScrollPhysics(),
       ),

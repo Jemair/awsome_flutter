@@ -5,9 +5,7 @@
  * 请切换home注释分别查看
  */
 import 'package:flutter/material.dart';
-import 'bottom_navigation_widget.dart';
-
-import 'navigation_keep_alive.dart';
+import 'package:flutter_bottomnavigationbar/navigation_keep_alive.dart';
 
 void main() => runApp(new MyApp());
 
@@ -17,9 +15,8 @@ class MyApp extends StatelessWidget {
     return new MaterialApp(
       title: 'Flutter bottomNavigationBar',
       theme: new ThemeData.dark(),
-      home: BottomNavigationWidget(),
-//    home: NavigationKeepAlive(),
+//      home: BottomNavigationWidget(),
+      home: NavigationKeepAlive(),
     );
   }
 }
-

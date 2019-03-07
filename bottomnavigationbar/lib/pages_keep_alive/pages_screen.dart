@@ -5,8 +5,7 @@ class PagesScreen extends StatefulWidget {
   _PagesScreenState createState() => _PagesScreenState();
 }
 
-class _PagesScreenState extends State<PagesScreen>
-    with AutomaticKeepAliveClientMixin {
+class _PagesScreenState extends State<PagesScreen> with AutomaticKeepAliveClientMixin {
   @override
   // TODO: implement wantKeepAlive
   bool get wantKeepAlive => true;
